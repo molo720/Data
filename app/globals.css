@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 216 56% 98%;
+  --foreground: 224 41% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 41% 11%;
+  --primary: 231 68% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 217 42% 94%;
+  --secondary-foreground: 224 41% 11%;
+  --muted: 220 30% 94%;
+  --muted-foreground: 222 14% 42%;
+  --accent: 176 70% 39%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 20% 86%;
+  --input: 220 20% 88%;
+  --ring: 231 68% 55%;
+}
+
+.dark {
+  --background: 222 58% 7%;
+  --foreground: 218 40% 96%;
+  --card: 223 47% 11%;
+  --card-foreground: 218 40% 96%;
+  --primary: 233 94% 72%;
+  --primary-foreground: 222 58% 7%;
+  --secondary: 222 40% 16%;
+  --secondary-foreground: 218 40% 96%;
+  --muted: 223 34% 16%;
+  --muted-foreground: 218 17% 70%;
+  --accent: 176 67% 46%;
+  --accent-foreground: 222 58% 7%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 223 32% 20%;
+  --input: 223 32% 20%;
+  --ring: 233 94% 72%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(79, 70, 229, 0.16), transparent 34rem),
+    radial-gradient(circle at 85% 12%, rgba(20, 184, 166, 0.14), transparent 28rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.28);
+}
+
+.glass-panel {
+  background: color-mix(in srgb, hsl(var(--card)) 82%, transparent);
+  border: 1px solid color-mix(in srgb, hsl(var(--border)) 76%, transparent);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(22px);
+}
+
+.dark .glass-panel {
+  background: color-mix(in srgb, hsl(var(--card)) 76%, transparent);
+  box-shadow: 0 18px 70px rgba(0, 0, 0, 0.32);
+}
+
+.analytics-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-pad {
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
